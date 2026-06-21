@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-cyber-bg: var(--color-bg);
+  --color-cyber-surface: var(--color-surf);
+  --color-cyber-card: var(--color-card-bg);
+  
+  --color-cyber-primary: var(--color-prim);
+  --color-cyber-primary-hover: var(--color-prim-hover);
+  --color-cyber-secondary: var(--color-sec);
+  --color-cyber-accent: var(--color-acc);
+  
+  --color-cyber-text: var(--color-txt);
+  --color-cyber-muted: var(--color-mut);
+  --color-border: var(--color-brd);
+}
+
+@layer base {
+  :root {
+    --color-bg: #F8FAFC;          /* slate-50 */
+    --color-surf: #F1F5F9;        /* slate-100 */
+    --color-card-bg: #FFFFFF;     /* white */
+    
+    --color-prim: #4F46E5;        /* indigo-600 */
+    --color-prim-hover: #4338ca;  /* indigo-700 */
+    --color-sec: #2563EB;         /* blue-600 */
+    --color-acc: #06B6D4;         /* cyan-500 */
+    
+    --color-txt: #0F172A;         /* slate-900 */
+    --color-mut: #64748B;         /* slate-500 */
+    --color-brd: rgba(15, 23, 42, 0.1);
+  }
+
+  .dark {
+    --color-bg: #0F172A;          /* slate-900 - professional dark */
+    --color-surf: #1E293B;        /* slate-800 */
+    --color-card-bg: #1E293B;     /* slate-800 */
+    
+    --color-prim: #6366f1;        /* indigo-500 */
+    --color-prim-hover: #4F46E5;  /* indigo-600 */
+    --color-sec: #3b82f6;         /* blue-500 */
+    --color-acc: #22d3ee;         /* cyan-400 */
+    
+    --color-txt: #F8FAFC;         /* slate-50 */
+    --color-mut: #94A3B8;         /* slate-400 */
+    --color-brd: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    background-color: var(--color-cyber-bg);
+    color: var(--color-cyber-text);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-cyber-primary);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: var(--color-cyber-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--color-border);
+  }
+}
