@@ -1,4 +1,7 @@
 import mongoose from 'mongoose';
+import dns from "dns/promises"
+
+dns.setServers(['4.4.4.4', '1.1.1.1'])
 
 const MONGODB_URI = process.env.MONGO_URI;
 
